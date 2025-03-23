@@ -5,10 +5,10 @@ spring:
     gateway:
       routes:
         # Video Service Route
-        - id: product-service
+        - id: video-service
           uri: lb://video-service
           predicates:
-            - Path=/api/product, /api/product/test/**
+            - Path=/api/video, /api/video/test/**
         # Discovery Service Route
         - id: discovery-server
           uri: http://localhost:8761
@@ -25,11 +25,11 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8181/realms/spring-boot-microservices-realm
+          issuer-uri: http://localhost:8181/realms/vtube-realm
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka:eureka@localhost:8761/eureka
+      defaultZone: http://${EUREKA_USERNAME:eureka}:${EUREKA_PASSWORD:eureka}@localhost:8761/eureka
 logging:
   level:
     root: DEBUG

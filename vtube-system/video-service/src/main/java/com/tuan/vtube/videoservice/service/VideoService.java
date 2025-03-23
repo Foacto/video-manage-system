@@ -24,15 +24,15 @@ public class VideoService {
     private final VideoRepository videoRepository;
 
     public AppResponse createProduct(VideoForm form) {
-        Video video = Video.builder()
-                .name(form.getName())
-                .des(form.getDes())
-                .price(form.getPrice())
-                .build();
-
-        // Save product to database
-        videoRepository.save(video);
-        log.info("Product ID:{} saved", video.getId());
+//        Video video = Video.builder()
+//                .name(form.getName())
+//                .des(form.getDes())
+//                .price(form.getPrice())
+//                .build();
+//
+//        // Save product to database
+//        videoRepository.save(video);
+//        log.info("Product ID:{} saved", video.getId());
 
         return AppResponse.builder()
                 .message("Product create successful")
@@ -49,9 +49,9 @@ public class VideoService {
     private VideoBean mapToProductResponse(Video VIdeo) {
         return VideoBean.builder()
                 .id(VIdeo.getId())
-                .name(VIdeo.getName())
-                .des(VIdeo.getDes())
-                .price(VIdeo.getPrice())
+//                .name(VIdeo.getName())
+//                .des(VIdeo.getDes())
+//                .price(VIdeo.getPrice())
                 .build();
     }
 
