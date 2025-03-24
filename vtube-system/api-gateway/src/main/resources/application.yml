@@ -35,3 +35,9 @@ logging:
     root: DEBUG
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.gateway.routeRouteDefinitionLocator: INFO
+#JWT CONVERTOR
+jwt:
+  auth:
+    converter:
+      principle-attribute: preferred_username
+      resource-id: vtube
