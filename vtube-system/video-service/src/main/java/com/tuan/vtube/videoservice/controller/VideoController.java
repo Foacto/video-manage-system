@@ -15,10 +15,16 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/video")
+@RequestMapping("/api/v1/video")
 @RequiredArgsConstructor
 public class VideoController {
     private final VideoService videoService;
+
+    @GetMapping("/all")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<String> getAll() {
+        return ResponseEntity.ok("Okkk");
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)

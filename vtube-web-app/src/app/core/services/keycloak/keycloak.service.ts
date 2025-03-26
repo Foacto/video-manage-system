@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import Keycloak from 'keycloak-js';
-import { environment } from '../../../environments/environment';
 import { UserProfile } from '../../common/user-profile';
+import { environment } from '../../../shared/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,7 @@ export class KeycloakService {
       this._keycloak = new Keycloak({
         url: environment.keycloakUrl,
         realm: environment.keycloakRealm,
-        clientId: 'bsn',
+        clientId: 'vtube-client',
       });
     }
     return this._keycloak;

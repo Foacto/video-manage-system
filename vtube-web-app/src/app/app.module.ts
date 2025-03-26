@@ -11,15 +11,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ContentLayoutComponent } from './modules/common/content-layout/content-layout.component';
+import { HomeComponent } from './modules/common/home/home.component';
+import { SharedModule } from './shared/shared.module';
 
 export function kcFactory(keycloakService: KeycloakService) {
   return () => keycloakService.init();
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ContentLayoutComponent, HomeComponent],
   imports: [
     CommonModule,
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

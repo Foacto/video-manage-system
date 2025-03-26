@@ -25,7 +25,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8181/realms/vtube-realm
+          issuer-uri: http://localhost:8181/realms/vtube
 eureka:
   client:
     service-url:
@@ -40,4 +40,4 @@ jwt:
   auth:
     converter:
       principle-attribute: preferred_username
-      resource-id: vtube
+      resource-id: account
