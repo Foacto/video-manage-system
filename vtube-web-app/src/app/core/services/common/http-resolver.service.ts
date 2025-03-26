@@ -6,7 +6,7 @@ import { environment } from '../../../shared/environments/environment';
   providedIn: 'root',
 })
 export class HttpResolver {
-  serverUrl: string = environment.serverApi + '/api/v1';
+  public serverUrl: string = environment.serverApi;
 
   constructor(public http: HttpClient) {}
 

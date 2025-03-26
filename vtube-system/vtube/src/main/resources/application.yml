@@ -1,6 +1,10 @@
+server:
+  port: 0
+  error:
+    include-message: ALWAYS
 spring:
   application:
-    name: video-service
+    name: vtube
   datasource:
     url: jdbc:mysql://localhost:3306/video_streaming
     username: root
@@ -10,10 +14,6 @@ spring:
     hibernate:
       ddl-auto: none
     show-sql: true
-server:
-  port: 8001
-  error:
-    include-message: ALWAYS
 eureka:
   client:
     service-url:

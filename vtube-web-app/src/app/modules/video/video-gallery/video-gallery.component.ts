@@ -9,7 +9,7 @@ import { environment } from '../../../shared/environments/environment';
   styleUrl: './video-gallery.component.scss',
 })
 export class VideoGalleryComponent {
-  serverAPI = environment.serverApi + '/api/v1';
+  serverAPI = environment.serverApi;
   previews: VideoMetadata[] = [];
   isError: boolean = false;
 

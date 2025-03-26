@@ -3,5 +3,5 @@ export const environment = {
   keycloakRealm: 'vtube',
 
   clientApi: 'http://localhost:4200',
-  serverApi: 'http://localhost:8001',
+  serverApi: 'http://localhost:8009',
 };
