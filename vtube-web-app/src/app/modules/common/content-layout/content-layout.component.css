@@ -1,0 +1,38 @@
+.layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.nav-zone {
+  width: 15rem;
+  height: calc(100vh - 3rem);
+  transition: 0.3s;
+}
+
+.minium-nav {
+  width: 4rem;
+}
+
+.bread-crumb {
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.content-zone {
+  width: calc(100% - 15rem);
+  height: calc(100vh - 3rem);
+  transition: 0.3s;
+  position: relative;
+}
+
+.content-lg {
+  width: calc(100% - 5rem);
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  right: 0;
+}
