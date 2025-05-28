@@ -58,4 +58,7 @@ jwt:
   auth:
     converter:
       principle-attribute: preferred_username
+      realm-access: realm_access
+      resource-access: resource_access
       resource-id: account
+      role: roles
