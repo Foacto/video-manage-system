@@ -1,4 +1,4 @@
-package com.tuan.vtube.videoservice.config;
+package com.tuan.vtube.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

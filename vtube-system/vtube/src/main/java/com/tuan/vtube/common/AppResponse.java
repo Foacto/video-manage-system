@@ -1,4 +1,4 @@
-package com.tuan.vtube.videoservice.bean;
+package com.tuan.vtube.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

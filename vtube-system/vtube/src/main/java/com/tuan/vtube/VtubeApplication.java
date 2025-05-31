@@ -1,4 +1,4 @@
-package com.tuan.vtube.videoservice;
+package com.tuan.vtube;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

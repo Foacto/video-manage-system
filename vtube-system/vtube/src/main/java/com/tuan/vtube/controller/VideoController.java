@@ -1,9 +1,11 @@
-package com.tuan.vtube.videoservice.controller;
+package com.tuan.vtube.controller;
 
-import com.tuan.vtube.videoservice.bean.AppResponse;
-import com.tuan.vtube.videoservice.bean.VideoBean;
-import com.tuan.vtube.videoservice.form.VideoForm;
-import com.tuan.vtube.videoservice.service.VideoService;
+import com.tuan.vtube.common.AppResponse;
+import com.tuan.vtube.common.Utils;
+import com.tuan.vtube.common.VideoBean;
+import com.tuan.vtube.form.VideoForm;
+import com.tuan.vtube.model.UserData;
+import com.tuan.vtube.service.VideoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
@@ -24,6 +26,7 @@ public class VideoController {
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<VideoBean> getAll(HttpServletRequest request) {
+        UserData userData = Utils.getUserData(request);
         System.out.println(request.getHeaders("vtube-auth").nextElement());
         VideoBean bean = new VideoBean();
         bean.setId("OKKKK");

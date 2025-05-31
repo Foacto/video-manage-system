@@ -1,4 +1,4 @@
-package com.tuan.vtube.videoservice.form;
+package com.tuan.vtube.form;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

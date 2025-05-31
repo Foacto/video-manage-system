@@ -1,10 +1,10 @@
-package com.tuan.vtube.videoservice.service;
+package com.tuan.vtube.service;
 
-import com.tuan.vtube.videoservice.form.VideoForm;
-import com.tuan.vtube.videoservice.bean.AppResponse;
-import com.tuan.vtube.videoservice.bean.VideoBean;
-import com.tuan.vtube.videoservice.model.Video;
-import com.tuan.vtube.videoservice.repository.VideoRepository;
+import com.tuan.vtube.form.VideoForm;
+import com.tuan.vtube.common.AppResponse;
+import com.tuan.vtube.common.VideoBean;
+import com.tuan.vtube.model.Video;
+import com.tuan.vtube.repository.VideoRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

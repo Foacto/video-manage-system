@@ -1,4 +1,4 @@
-package com.tuan.vtube.videoservice.controller;
+package com.tuan.vtube.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;

@@ -1,6 +1,6 @@
-package com.tuan.vtube.videoservice.repository;
+package com.tuan.vtube.repository;
 
-import com.tuan.vtube.videoservice.model.Video;
+import com.tuan.vtube.model.Video;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,21 +1,19 @@
-package com.tuan.vtube.videoservice.model;
+package com.tuan.vtube.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "video_infor")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Video {
+@Getter
+@Setter
+public class Video extends BaseModel {
     @Id
     @GeneratedValue(generator = "video_id_generator")
-    @GenericGenerator(name = "video_id_generator", strategy = "com.tuan.vtube.videoservice.generator.VideoIdGenerator")
+    @GenericGenerator(name = "video_id_generator", strategy = "com.tuan.vtube.generator.VideoIdGenerator")
     private String id;
 
     @Column(name = "title")

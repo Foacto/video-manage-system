@@ -1,4 +1,4 @@
-package com.tuan.vtube.videoservice.generator;
+package com.tuan.vtube.generator;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;

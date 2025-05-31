@@ -1,7 +1,9 @@
 package com.tuan.vtube.apigateway.config;
 
+import com.tuan.vtube.apigateway.common.Constants;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -10,8 +12,6 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class UserDataFilter implements WebFilter {
-    private final String USER_DATA = "vtube-auth";
-    private final String USER_DATA_ACCESS = "vtube-access";
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         return ReactiveSecurityContextHolder.getContext()
@@ -19,8 +19,12 @@ public class UserDataFilter implements WebFilter {
 
                     ServerHttpRequest mutatedRequest = exchange.getRequest()
                             .mutate()
-                            .header(USER_DATA, securityContext.getAuthentication().getName())
-                            .header(USER_DATA_ACCESS, securityContext.getAuthentication().getAuthorities().toString())
+                            .header(Constants.USER_DATA,
+                                    ((Jwt)securityContext.getAuthentication().getPrincipal()).getClaim("sub")
+                                            + Constants.DELIMITER +
+                                            securityContext.getAuthentication().getName())
+                            .header(Constants.USER_DATA_ACCESS, securityContext.getAuthentication().getAuthorities().toString())
+                            .header(Constants.USER_DATA_ACCESS, securityContext.getAuthentication().getAuthorities().toString())
                             .build();
 
                     return exchange.mutate()

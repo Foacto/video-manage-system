@@ -1,5 +1,6 @@
 package com.tuan.vtube.apigateway.config;
 
+import com.tuan.vtube.apigateway.common.Constants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
@@ -68,7 +69,8 @@ public class JwtAuthConverter implements Converter<Jwt, Mono<AbstractAuthenticat
 
         roles = (Collection<String>) realmAccess.get(ROLE);
         return roles.stream()
-                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.replace("-", "_")))
+                .map(role -> new SimpleGrantedAuthority(
+                        Constants.ROLE + Constants.UNDERSCORE + role.replace(Constants.DASH, Constants.UNDERSCORE)))
                 .collect(Collectors.toSet());
     }
 
@@ -88,7 +90,8 @@ public class JwtAuthConverter implements Converter<Jwt, Mono<AbstractAuthenticat
 
         resourceRoles = (Collection<String>) resource.get(ROLE);
         return resourceRoles.stream()
-                .map(action -> new SimpleGrantedAuthority("ACTION_" + action.replace("-", "_")))
+                .map(action -> new SimpleGrantedAuthority(
+                        Constants.ACTION + Constants.UNDERSCORE + action.replace(Constants.DASH, Constants.UNDERSCORE)))
                 .collect(Collectors.toSet());
     }
 }
