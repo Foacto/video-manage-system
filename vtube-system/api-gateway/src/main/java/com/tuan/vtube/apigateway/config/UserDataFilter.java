@@ -52,10 +52,11 @@ public class UserDataFilter implements WebFilter {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
+        Jwt jwt = (Jwt) securityContext.getAuthentication().getPrincipal();
         return UserData.builder()
-                .id(((Jwt) securityContext.getAuthentication().getPrincipal()).getClaim("sub"))
-                .name(securityContext.getAuthentication().getName())
-                .email("")
+                .id(jwt.getClaim("sub"))
+                .name(jwt.getClaim("name"))
+                .email(jwt.getClaim("email"))
                 .roles(roles)
                 .actions(actions)
                 .scopes(scopes)
