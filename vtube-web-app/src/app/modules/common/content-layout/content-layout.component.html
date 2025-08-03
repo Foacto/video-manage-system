@@ -1,5 +1,9 @@
 <div>
-  <app-header></app-header>
+  <app-header
+    #header
+    class="app-header"
+    (navViewChange)="navViewChange($event)"
+  ></app-header>
 </div>
 <div class="layout">
   <div class="nav-zone" [ngClass]="{ 'minium-nav': isMinium }">
