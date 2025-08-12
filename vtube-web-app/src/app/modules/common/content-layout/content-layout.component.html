@@ -1,0 +1,25 @@
+<div>
+  <app-header
+    #header
+    class="app-header"
+    (navViewChange)="navViewChange($event)"
+  ></app-header>
+</div>
+<div class="layout">
+  <div class="nav-zone" [ngClass]="{ 'minium-nav': isMinium }">
+    <app-nav></app-nav>
+  </div>
+  <div class="content-zone" [ngClass]="{ 'content-lg': isMinium }">
+    <div class="app-content">
+      <div class="app-content-body">
+        <div class="bread-crumb">
+          <p-breadcrumb [home]="home" [model]="items"></p-breadcrumb>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>

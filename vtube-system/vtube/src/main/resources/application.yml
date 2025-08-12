@@ -1,0 +1,20 @@
+server:
+  port: 0
+  error:
+    include-message: ALWAYS
+spring:
+  application:
+    name: vtube
+  datasource:
+    url: jdbc:mysql://localhost:3306/video_streaming
+    username: root
+    password: 27012001
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_USERNAME:eureka}:${EUREKA_PASSWORD:eureka}@localhost:8761/eureka

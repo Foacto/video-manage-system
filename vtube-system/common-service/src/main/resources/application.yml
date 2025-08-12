@@ -1,0 +1,5 @@
+spring:
+  #PROFILE
+  profiles:
+    active: dev
+    class-loader: conf

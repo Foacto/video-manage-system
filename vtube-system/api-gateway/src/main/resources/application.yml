@@ -1,3 +1,5 @@
+server:
+  port: 8009
 spring:
   application:
     name: api-gateway
@@ -5,10 +7,10 @@ spring:
     gateway:
       routes:
         # Video Service Route
-        - id: video-service
-          uri: lb://video-service
+        - id: vtube
+          uri: lb://vtube
           predicates:
-            - Path=/api/video, /api/video/test/**
+            - Path=/vtube/api/v1/**
         # Discovery Service Route
         - id: discovery-server
           uri: http://localhost:8761
@@ -21,11 +23,27 @@ spring:
           uri: http://localhost:8761
           predicates:
             - Path=/eureka/**
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_FIRST
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:4200"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+            maxAge: 3600
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8181/realms/vtube-realm
+          issuer-uri: http://localhost:8181/realms/vtube
 eureka:
   client:
     service-url:
@@ -35,3 +53,12 @@ logging:
     root: DEBUG
     org.springframework.cloud.gateway: TRACE
     org.springframework.cloud.gateway.routeRouteDefinitionLocator: INFO
+#JWT CONVERTOR
+jwt:
+  auth:
+    converter:
+      principle-attribute: preferred_username
+      realm-access: realm_access
+      resource-access: resource_access
+      resource-id: account
+      role: roles

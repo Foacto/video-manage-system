@@ -1,0 +1,65 @@
+<div class="header-container">
+	<div class="header-container-left">
+		<div class="icon-box icon-action" (click)="onMinium()">
+			<img src="assets/icons/layout-icons/header-arrow.svg" width="35px" height="25px" alt="" [ngClass]="{ 'rotate-180deg': isMinium }" />
+		</div>
+		<div class="icon-box icon-action" (click)="toHomePage()">
+			<img src="assets/icons/logo.svg" width="60px" height="25px" alt="" />
+		</div>
+		<div class="icon-box" style="max-width: 600px">
+			<!-- <p-menubar #menuBar [model]="childMenuItems"></p-menubar> -->
+		</div>
+	</div>
+
+	<div class="header-container-right">
+		<ul class="header-right sys-ul">
+			<li class="search-bar icon-action">
+				<img src="assets/icons/layout-icons/search.svg" width="25px" height="25px" alt="Search" (click)="onSearch()" />
+			</li>
+			<li class="icon-action">
+				<img src="assets/icons/layout-icons/notification.svg" width="25px" height="25px" alt="Notification" />
+			</li>
+			<li ngbDropdown placement="bottom-right">
+				<a class="btn-header btn-arrow-down icon-action" ngbDropdownToggle id="info-dropdown">
+					<img class="image-user" [src]="'assets/icons/layout-icons/profile.svg'" width="25px" height="25px" alt="User Avatar" />
+				</a>
+				<div class="info-dropdown" ngbDropdownMenu aria-labelledby="info-dropdown">
+					<ul class="sys-ul">
+						<li class="dropdown-item icon-action" (click)="viewProfile()">
+							<div class="display-table" style="padding: 5px">
+								<div class="table-cell first align-items-center">
+									<div class="user-avatar">
+										<img class="image-user" [src]="'assets/icons/layout-icons/profile.svg'" width="25px" height="25px" alt="User Avatar" />
+									</div>
+								</div>
+								<div class="table-cell menu-text ps-2">
+									<span class="user-name">User Name</span>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown-item icon-action">
+							<div class="display-table" style="padding: 5px">
+								<div class="table-cell first align-items-center">
+									<img src="assets/icons/layout-icons/setting.svg" width="25px" height="25px" alt="Settings" />
+								</div>
+								<div class="table-cell menu-text ps-2">
+									<span class="user-name">Settings</span>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown-item icon-action" (click)="logout()">
+							<div class="display-table" style="padding: 5px">
+								<div class="table-cell first align-items-center">
+									<img style="width: 20px" src="assets/icons/layout-icons/logout.svg" width="25px" height="25px" alt="Loggout" />
+								</div>
+								<div class="table-cell menu-text ps-2">
+									<span class="user-name">Logout</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
